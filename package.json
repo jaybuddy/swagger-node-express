@@ -6,7 +6,7 @@
   "keywords": [],
   "author": "",
   "license": "",
-  "main": "app.js",
+  "main": "build/server.js",
   "dependencies": {
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-inline-dotenv": "^1.1.2",
@@ -26,11 +26,13 @@
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
     "babel-polyfill": "^6.26.0",
+    "nodemon": "^1.17.3",
     "should": "^7.1.0",
     "supertest": "^1.0.0"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "yarn && NODE_ENV=development nodemon api/server.js -e js,yaml --ignore node_modules --ignore build --ignore swagger-ui --exec babel-node",
+    "build": "yarn && babel api -d build",
     "test": "swagger project test"
   }
 }
