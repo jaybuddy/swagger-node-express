@@ -5,7 +5,7 @@ import swaggerui from 'swagger-tools/middleware/swagger-ui';
 
 
 const NODE_PORT = process.env.NODE_PORT || 3000;
-const SWAGGER_UI = path.join(__dirname, 'api/swagger/swagger-ui/dist');
+const SWAGGER_UI = path.join(__dirname, 'api/swagger/swagger-ui');
 const appRoot = path.join(__dirname, '');
 const app = express();
 const config = {
